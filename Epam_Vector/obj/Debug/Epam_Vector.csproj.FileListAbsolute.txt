@@ -1,0 +1,7 @@
+c:\users\admin\documents\visual studio 2015\Projects\Epam_Vector\Epam_Vector\bin\Debug\Epam_Vector.exe.config
+c:\users\admin\documents\visual studio 2015\Projects\Epam_Vector\Epam_Vector\bin\Debug\Epam_Vector.exe
+c:\users\admin\documents\visual studio 2015\Projects\Epam_Vector\Epam_Vector\bin\Debug\Epam_Vector.pdb
+c:\users\admin\documents\visual studio 2015\Projects\Epam_Vector\Epam_Vector\obj\Debug\Epam_Vector.exe
+c:\users\admin\documents\visual studio 2015\Projects\Epam_Vector\Epam_Vector\obj\Debug\Epam_Vector.pdb
+C:\Users\admin\Documents\Visual Studio 2015\Projects\Epam_Vector\Epam_Vector\bin\Debug\Epam_Vector.exe.CodeAnalysisLog.xml
+C:\Users\admin\Documents\Visual Studio 2015\Projects\Epam_Vector\Epam_Vector\bin\Debug\Epam_Vector.exe.lastcodeanalysissucceeded
