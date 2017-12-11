@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Epam_Log_library;
+
 
 namespace Epam_Vector
 {
@@ -14,6 +16,9 @@ namespace Epam_Vector
         public double X { get; set; }
         public double Y { get; set; }
         public double Z { get; set; }
+
+        public ILogger loger;
+
         /// <summary>
         /// constructor for vector
         /// </summary>
@@ -25,6 +30,7 @@ namespace Epam_Vector
             X = x;
             Y = y;
             Z = z;
+            loger = LoggerChoise.GetLogger(ConfigFromFile.GetFormatLogger());
         }
         /// <summary>
         /// Overrided method ToString() for vector
@@ -39,6 +45,7 @@ namespace Epam_Vector
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                loger.Log(ex.Message, levels.error, this);
                 return null;
             }
         }
@@ -55,6 +62,7 @@ namespace Epam_Vector
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                loger.Log(ex.Message, levels.error, this);
                 return 0;
             }
         }
@@ -67,11 +75,15 @@ namespace Epam_Vector
         {
             try
             {
+                //example write to log file with loger from Epam_Log_library
+                string str = "Add vectors" + this.ToString() + " and " + v.ToString() + " with rezult " + new Vector(X + v.X, Y + v.Y, Z + v.Z).ToString();
+                loger.Log(str, levels.info, this);
                 return new Vector(X + v.X, Y + v.Y, Z + v.Z);
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                loger.Log(ex.Message, levels.error, this);
                 return null;
             }
         }
@@ -107,6 +119,7 @@ namespace Epam_Vector
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                loger.Log(ex.Message, levels.error, this);
                 return null;
             }
         }
@@ -142,6 +155,7 @@ namespace Epam_Vector
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                loger.Log(ex.Message, levels.error, this);
                 return 0;
             }
         }
@@ -159,6 +173,7 @@ namespace Epam_Vector
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                loger.Log(ex.Message, levels.error, this);
                 return null;
             }
         }
@@ -195,6 +210,7 @@ namespace Epam_Vector
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                loger.Log(ex.Message, levels.error, this);
                 return 0;
             }
         }
@@ -209,14 +225,16 @@ namespace Epam_Vector
             {
                 return this.MultScalar(v) / (this.Lenght() * v.Lenght());
             }
-            catch (DivideByZeroException)
+            catch (DivideByZeroException ex)
             {
                 Console.WriteLine("Divide by zero");
+                loger.Log(ex.Message, levels.error, this);
                 return 0;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                loger.Log(ex.Message, levels.error, this);
                 return 0;
             }
         }
@@ -234,6 +252,7 @@ namespace Epam_Vector
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                loger.Log(ex.Message, levels.error, this);
                 return false;
             }
         }

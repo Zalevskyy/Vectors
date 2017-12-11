@@ -47,6 +47,7 @@ namespace Epam_Vector
             Console.WriteLine("Порівняння "+vector1+" з "+vector2+" = "+vector1.isEqual(vector2));
             vector1 = new Vector(5, 5, 0);
             Console.WriteLine("Порівняння " + vector1 + " з " + vector2 + " = " + vector1.isEqual(vector2));
+            
         }
     }
 }
